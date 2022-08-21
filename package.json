@@ -1,0 +1,19 @@
+{
+  "name": "tax-cli-ts",
+  "version": "1.0.0",
+  "description": "CLI application to calculate taxes",
+  "main": "index.ts",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luispuentesvega/tax-cli-ts.git"
+  },
+  "author": "Luis Puentes <luis@slash.co>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/luispuentesvega/tax-cli-ts/issues"
+  },
+  "homepage": "https://github.com/luispuentesvega/tax-cli-ts#readme"
+}
