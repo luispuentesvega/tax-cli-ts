@@ -33,7 +33,9 @@ const type = args.type;
     const stream = fs.createReadStream(csvFilePath);
     const callback = (total: number) => {
       const formattedTotal = numeral(total).format('$0,0.00');
-      console.log(`For tax ${type}, customer ${user} has declared ${formattedTotal}`);
+      console.log(
+        `For tax ${type}, customer ${user} has declared ${formattedTotal}`
+      );
     };
     taxCalculator(stream, args, callback);
   } catch (error) {

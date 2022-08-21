@@ -59,7 +59,7 @@ Unit Testing
 npm run test
 ```
 
-Calculate tax, you must provide the user, file and type
+Calculate Tax
 
 ```bash
 npx ts-node index.ts --user=8143 --file=transaction-30lines.csv --type=PAYROLL
