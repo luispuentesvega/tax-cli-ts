@@ -60,7 +60,6 @@ describe('# validateData', () => {
     fs.createReadStream(csvFilePath).pipe(parser).pipe(validateData);
 
     validateData.on('error', (error) => {
-      console.log('HERROR:', error.message);
       expect(error.message).toBe(
         '"taxType" must be one of [GST, PAYROLL, COMPANY_TAX, LAND_TAX, CAPITOL_GAIN]'
       );

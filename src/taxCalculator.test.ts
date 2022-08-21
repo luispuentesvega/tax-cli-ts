@@ -42,6 +42,7 @@ describe('# taxCalculator', () => {
     try {
       taxCalculator(stream, args, callback);
       expect(mockedPipeline).toHaveBeenCalled();
+      expect(mockedFinished).toHaveBeenCalled();
       stream.close();
       done();
     } catch (error) {
