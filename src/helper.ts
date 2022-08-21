@@ -1,8 +1,9 @@
-import { Numeral } from 'numeral';
 import { parse } from 'csv-parse';
-import Joi from 'joi';
-import { TaxInvoice, TaxType } from './types';
 import * as es from 'event-stream';
+import Joi from 'joi';
+import { Numeral } from 'numeral';
+
+import { TaxInvoice, TaxType } from './types';
 
 const headers = [
   'customerId',

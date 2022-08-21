@@ -33,12 +33,34 @@ CLI application to calculate taxes using Typescript
 
 Sample command line
 
-```
+```bash
 npx ts-node index.ts --user=8143 --file=transaction-30lines.csv --type=PAYROLL
 ```
 
+Result
 
-Result 
 ```
-For tax PAYROLL, customer 8143 has declared $94.403
+For tax PAYROLL, customer 8143 has declared $94.40
+```
+
+## Installation
+
+Use the npm package manager
+
+```bash
+npm install
+```
+
+## Commands
+
+Unit Testing
+
+```bash
+npm run test
+```
+
+Calculate tax, you must provide the user, file and type
+
+```bash
+npx ts-node index.ts --user=8143 --file=transaction-30lines.csv --type=PAYROLL
 ```
