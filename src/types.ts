@@ -1,9 +1,9 @@
 export enum TaxType {
-  GST = "GST",
-  PAYROLL = "PAYROLL",
-  COMPANY_TAX = "COMPANY_TAX",
-  LAND_TAX = "LAND_TAX",
-  CAPITOL_GAIN = "CAPITOL_GAIN",
+  GST = 'GST',
+  PAYROLL = 'PAYROLL',
+  COMPANY_TAX = 'COMPANY_TAX',
+  LAND_TAX = 'LAND_TAX',
+  CAPITOL_GAIN = 'CAPITOL_GAIN'
 }
 
 export interface TaxInvoice {

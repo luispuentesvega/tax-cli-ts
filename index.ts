@@ -33,11 +33,7 @@ const type = args.type;
     const callback = (total: number) => {
       console.log(`For tax ${type}, customer ${user} has declared $${total}`);
     };
-    const callbackError = (error: string) => {
-      console.log('error:', error);
-    };
-
-    taxCalculator(stream, args, callback, callbackError);
+    taxCalculator(stream, args, callback);
   } catch (error) {
     console.error(error);
     exit(1);
