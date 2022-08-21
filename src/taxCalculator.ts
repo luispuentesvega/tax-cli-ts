@@ -1,11 +1,10 @@
 import * as es from 'event-stream';
 import * as fs from 'fs';
-
-import { TaxInvoice } from './types';
-import { parser, calculateTax, validateData } from './helper';
+import numeral from 'numeral';
 import { finished, pipeline } from 'stream';
 
-import numeral from 'numeral';
+import { calculateTax, parser, validateData } from './helper';
+import { TaxInvoice } from './types';
 
 type CallbackTotal = (total: number) => void;
 type Args = {
@@ -37,7 +36,6 @@ const calculate = (
     if (err) {
       console.error('Stream failed', err);
     } else {
-      console.log('Tax calculation finished', total);
       const totalTax = calculateTax(total);
       callback(totalTax);
     }

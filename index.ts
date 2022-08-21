@@ -1,10 +1,10 @@
 import * as fs from 'fs';
+import numeral from 'numeral';
 import * as path from 'path';
+import { exit } from 'process';
 import * as yargs from 'yargs';
 
-import { exit } from 'process';
 import taxCalculator from './src/taxCalculator';
-import numeral from 'numeral';
 
 const args = yargs.argv as any;
 
@@ -32,11 +32,8 @@ const type = args.type;
     const csvFilePath = path.resolve(__dirname, `fixture/${file}`);
     const stream = fs.createReadStream(csvFilePath);
     const callback = (total: number) => {
-      console.log(
-        `For tax ${type}, customer ${user} has declared ${numeral(total).format(
-          '$0,0.00'
-        )}`
-      );
+      const formattedTotal = numeral(total).format('$0,0.00');
+      console.log(`For tax ${type}, customer ${user} has declared ${formattedTotal}`);
     };
     taxCalculator(stream, args, callback);
   } catch (error) {
