@@ -13,13 +13,13 @@ const calculate = (
 ) => {
   const { user, type } = args;
   const total = numeral(0);
-  const totalInvoice = es.mapSync((line: TaxInvoice) => {
+  const calculateTotalInvoices = es.mapSync((line: TaxInvoice) => {
     if (line.customerId === user && line.taxType === type) {
       total.add(line.amount);
     }
   });
 
-  pipeline(stream, parser, validateData, totalInvoice, (err) => {
+  pipeline(stream, parser, validateData, calculateTotalInvoices, (err) => {
     if (err) {
       console.error('Pipeline failed', err);
     }
