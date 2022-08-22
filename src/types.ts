@@ -13,3 +13,10 @@ export interface TaxInvoice {
   amount: number;
   taxType: TaxType;
 }
+
+export type CallbackTotal = (total: number) => void;
+
+export type Args = {
+  user: number;
+  type: string;
+};

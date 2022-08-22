@@ -4,13 +4,7 @@ import numeral from 'numeral';
 import { finished, pipeline } from 'stream';
 
 import { calculateTax, parser, validateData } from './helper';
-import { TaxInvoice } from './types';
-
-type CallbackTotal = (total: number) => void;
-type Args = {
-  user: number;
-  type: string;
-};
+import { Args, CallbackTotal, TaxInvoice } from './types';
 
 const calculate = (
   stream: fs.ReadStream,
@@ -19,7 +13,6 @@ const calculate = (
 ) => {
   const { user, type } = args;
   const total = numeral(0);
-
   const totalInvoice = es.mapSync((line: TaxInvoice) => {
     if (line.customerId === user && line.taxType === type) {
       total.add(line.amount);
